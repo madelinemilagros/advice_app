@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-
 import './App.css';
 
 class App extends React.Component {
@@ -16,7 +15,7 @@ class App extends React.Component {
     axios.get('https://api.adviceslip.com/advice')
       .then((response) => {
         const { advice } = response.data.slip;
-
+     
         this.setState({ advice });
       })
       .catch((error) => {
@@ -30,8 +29,11 @@ class App extends React.Component {
         <div className="card">
           <h1 className="heading">{this.state.advice}</h1>
           <button className="button" onClick={this.fetchAdvice}>
-            <span>GIVE ME ADVICE!</span>
+            <span>Otro Dicho</span>
           </button>
+          {/* {JSONData.content.map((data, index) => {
+          return <li key={`content_item_${index}`}><h6>{data.item}</h6>{data.test}</li>
+        })} */}
         </div>
       </div>
     );
